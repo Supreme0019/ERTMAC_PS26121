@@ -24,9 +24,26 @@ __pycache__/
 *$py.class
 .pytest_cache/
 *.log
+*.jsonl
 
 # OS & Editor specific files
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+
+# Local convenience scripts & developer tools (kept on computer, excluded from GitHub)
+start-all-servers.bat
+*.bat
+*.ps1
+SYSTEM_FORENSIC_AUDIT_REPORT.md
+test_all_ai_endpoints.py
+verify_all_three_tiers.py
+final ai/ai_service/test_*.py
+final ai/ai_service/inspect_schema.py
+final ai/ai_service/ml/outputs/
+eRTMAC-NWIS-Final/Wells/nwis-backend/inspect-*.js
+eRTMAC-NWIS-Final/Wells/nwis-backend/check_dups.js
+eRTMAC-NWIS-Final/Wells/nwis-backend/test_query.js
+eRTMAC-NWIS-Final/Wells/nwis-backend/audit_database_parameters.js
+eRTMAC-NWIS-Final/Wells/nwis-backend/fix-passwords.js
