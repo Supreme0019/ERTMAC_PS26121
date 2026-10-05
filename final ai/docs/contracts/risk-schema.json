@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NWIS Risk Alert",
+  "description": "One contextual risk alert returned by the NWIS AI service (GET /risks, WS /realtime). A decision-support indicator, not a prediction.",
+  "type": "object",
+  "required": [
+    "risk_type",
+    "risk_level",
+    "score",
+    "depth_range",
+    "evidence_strength",
+    "score_breakdown",
+    "reasons",
+    "evidence",
+    "rule_version"
+  ],
+  "properties": {
+    "risk_type": {
+      "type": "string",
+      "enum": [
+        "mud_loss",
+        "stuck_pipe",
+        "kick",
+        "torque_spike",
+        "cementing_issue",
+        "other"
+      ]
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "moderate",
+        "high",
+        "critical"
+      ],
+      "description": "score 0-30 low, 31-60 moderate, 61-80 high, 81-100 critical"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Contextual score, not a probability."
+    },
+    "depth_range": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "Historical interval mapped onto the active well, metres."
+    },
+    "evidence_strength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "score_breakdown": {
+      "type": "object",
+      "description": "Points per component (depth_overlap, formation, similar_well, same_event, anomaly, proximity).",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "well_id"
+        ],
+        "properties": {
+          "event_id": {
+            "type": "integer"
+          },
+          "well_id": {
+            "type": "string"
+          },
+          "depth": {
+            "type": "number"
+          },
+          "severity": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "mitigation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "doc": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Source document; null for events that came from structured records."
+          },
+          "page": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "quote": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Verbatim supporting sentence from the report; null for structured records."
+          }
+        }
+      }
+    },
+    "rule_version": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    },
+    "new": {
+      "type": "boolean",
+      "description": "Realtime stream only: true when this alert is new or its level changed on this tick."
+    }
+  }
+}

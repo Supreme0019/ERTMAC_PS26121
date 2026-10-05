@@ -1,0 +1,16 @@
+node_modules/
+
+# Environment files — NEVER commit real secrets
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+
+# Docker local overrides (devs put secret env_file references here)
+docker-compose.override.yml
+
+uploads/*
+!uploads/.gitkeep
+*.log
+dist/

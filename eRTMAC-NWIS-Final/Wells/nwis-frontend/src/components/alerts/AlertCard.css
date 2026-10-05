@@ -1,0 +1,124 @@
+.alert-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border-left-width: 4px;
+}
+
+.alert-severity-critical { border-left-color: var(--color-danger); }
+.alert-severity-high { border-left-color: var(--color-warning); }
+.alert-severity-medium { border-left-color: #fbbf24; }
+.alert-severity-low { border-left-color: var(--color-info); }
+.alert-severity-info { border-left-color: var(--color-primary); }
+
+.alert-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.alert-badges {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.alert-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.125rem 0.375rem;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.alert-badge.severity {
+  background-color: var(--color-background);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.alert-card.alert-severity-critical .alert-badge.severity {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border-color: #fca5a5;
+}
+
+.alert-card.alert-severity-high .alert-badge.severity {
+  background-color: #fef3c7;
+  color: #92400e;
+  border-color: #fcd34d;
+}
+
+.alert-badge.status {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.alert-badge.status.alert-status-generated {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.alert-badge.status.alert-status-acknowledged {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.alert-badge.status.alert-status-resolved {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.alert-meta {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.alert-well {
+  font-weight: 600;
+}
+
+.alert-depth {
+  font-family: monospace;
+}
+
+.alert-card-body {
+  margin-bottom: 1rem;
+}
+
+.alert-risk-type {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.alert-message {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.alert-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert-status-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.alert-evidence-container {
+  margin-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.5rem;
+}

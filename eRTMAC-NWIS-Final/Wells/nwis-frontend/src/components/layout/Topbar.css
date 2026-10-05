@@ -1,0 +1,213 @@
+/* Topbar Styles */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: var(--topbar-height, 64px);
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E5DCD0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 30;
+  flex-shrink: 0;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  max-width: 620px;
+}
+
+.topbar-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 400px;
+}
+
+.topbar-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.topbar-search-input {
+  width: 100%;
+  height: 38px;
+  padding-left: 38px !important;
+  padding-right: 50px !important;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  transition: all var(--transition-fast);
+}
+.topbar-search-input:focus {
+  background: var(--color-bg-input);
+  border-color: var(--color-border-focus);
+}
+
+.topbar-kbd {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2px 6px;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.topbar-badge-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Bell */
+.topbar-bell {
+  position: relative;
+}
+.topbar-bell-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 7px;
+  height: 7px;
+  background: var(--color-danger);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-bg-secondary);
+}
+
+/* User */
+.topbar-user {
+  position: relative;
+}
+
+.topbar-user-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+.topbar-user-btn:hover {
+  background: var(--color-bg-elevated);
+  border-color: var(--color-border);
+}
+
+.topbar-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.topbar-user-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.topbar-user-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.topbar-user-role {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  text-transform: capitalize;
+}
+
+.topbar-chevron {
+  color: var(--color-text-muted);
+  transition: transform var(--transition-fast);
+}
+.topbar-chevron.open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.topbar-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 200px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  padding: 6px;
+  z-index: 200;
+  animation: dropdown-in 0.15s ease-out;
+}
+
+@keyframes dropdown-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.topbar-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.topbar-dropdown-item:hover {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+}
+.topbar-dropdown-danger:hover {
+  background: rgba(248, 113, 113, 0.1);
+  color: var(--color-danger);
+}
+
+.topbar-dropdown-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 4px 0;
+}

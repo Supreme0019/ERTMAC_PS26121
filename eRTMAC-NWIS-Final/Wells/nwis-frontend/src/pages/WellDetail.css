@@ -1,0 +1,180 @@
+/* Well Detail Page Styles */
+
+.detail-header {
+  margin-bottom: var(--space-xl);
+}
+
+.detail-header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: var(--space-sm);
+}
+
+/* Quick Stats */
+.detail-stat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.detail-stat-icon {
+  color: var(--color-accent-cyan);
+}
+
+/* Tabs */
+.detail-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0;
+}
+
+.detail-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-bottom: -1px;
+}
+.detail-tab:hover {
+  color: var(--color-text-primary);
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+.detail-tab-active {
+  color: var(--color-accent-cyan);
+  border-bottom-color: var(--color-accent-cyan);
+}
+
+.detail-content {
+  min-height: 300px;
+}
+
+/* Info Grid */
+.detail-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.detail-info-label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+.detail-info-value {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+  margin-top: 2px;
+  text-transform: capitalize;
+}
+
+/* Nearby Wells */
+.nearby-well-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  color: var(--color-text-secondary);
+}
+.nearby-well-item:hover {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+}
+.nearby-well-name {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  flex: 1;
+}
+.nearby-well-dist {
+  font-size: 0.75rem;
+  color: var(--color-accent-cyan);
+  font-family: var(--font-mono);
+}
+
+/* Formation Column */
+.formation-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.formation-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.formation-depth {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+  padding: 4px 0;
+  position: relative;
+}
+.formation-depth-line {
+  position: absolute;
+  right: -6px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.formation-bar {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+}
+
+.formation-name {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #fff;
+}
+
+.formation-litho {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.formation-thickness {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+}

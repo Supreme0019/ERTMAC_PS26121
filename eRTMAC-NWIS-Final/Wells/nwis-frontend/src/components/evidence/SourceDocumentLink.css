@@ -1,0 +1,15 @@
+.source-document-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.source-document-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}

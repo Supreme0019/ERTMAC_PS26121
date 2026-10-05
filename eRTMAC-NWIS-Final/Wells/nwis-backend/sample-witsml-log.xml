@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =============================================================================
+     NWIS Demo Sample: WITSML 1.4.1.1 Log Document
+     Notice: File-based adapter demonstration mode (not a live eRTMAC link).
+     Contains 14 rows, including 1 intentionally corrupted row (Row #8) to demonstrate
+     automated rejection by the NWIS Data Quality Gate.
+============================================================================= -->
+<logs xmlns="http://www.witsml.org/schemas/1series" version="1.4.1.1">
+  <log uidWell="NWIS-DEMO-01" uid="log-rt-01">
+    <nameWell>NWIS-DEMO-01</nameWell>
+    <name>Realtime Drilling Telemetry (Lakwa Field)</name>
+    <description>File-based WITSML 1.4 Demonstration Log with Data Quality Gate Validation</description>
+
+    <!-- Channel Index Definitions & Mnemonic Mappings -->
+    <logCurveInfo uid="c1">
+      <mnemonic>MD</mnemonic>
+      <unit>m</unit>
+      <curveDescription>Measured Depth</curveDescription>
+      <typeLogData>double</typeLogData>
+    </logCurveInfo>
+    <logCurveInfo uid="c2">
+      <mnemonic>SWOB</mnemonic>
+      <unit>klbf</unit>
+      <curveDescription>Surface Weight on Bit</curveDescription>
+      <typeLogData>double</typeLogData>
+    </logCurveInfo>
+    <logCurveInfo uid="c3">
+      <mnemonic>SRPM</mnemonic>
+      <unit>rpm</unit>
+      <curveDescription>Surface Rotary Speed</curveDescription>
+      <typeLogData>double</typeLogData>
+    </logCurveInfo>
+    <logCurveInfo uid="c4">
+      <mnemonic>STOR</mnemonic>
+      <unit>kN.m</unit>
+      <curveDescription>Surface Torque</curveDescription>
+      <typeLogData>double</typeLogData>
+    </logCurveInfo>
+    <logCurveInfo uid="c5">
+      <mnemonic>ROPA</mnemonic>
+      <unit>m/h</unit>
+      <curveDescription>Average Rate of Penetration</curveDescription>
+      <typeLogData>double</typeLogData>
+    </logCurveInfo>
+    <logCurveInfo uid="c6">
+      <mnemonic>MWIN</mnemonic>
+      <unit>ppg</unit>
+      <curveDescription>Mud Weight In</curveDescription>
+      <typeLogData>double</typeLogData>
+    </logCurveInfo>
+    <logCurveInfo uid="c7">
+      <mnemonic>TFLO</mnemonic>
+      <unit>gpm</unit>
+      <curveDescription>Total Flow Rate</curveDescription>
+      <typeLogData>double</typeLogData>
+    </logCurveInfo>
+    <logCurveInfo uid="c8">
+      <mnemonic>SPPA</mnemonic>
+      <unit>psi</unit>
+      <curveDescription>Standpipe Pressure</curveDescription>
+      <typeLogData>double</typeLogData>
+    </logCurveInfo>
+    <logCurveInfo uid="c9">
+      <mnemonic>HKLD</mnemonic>
+      <unit>kN</unit>
+      <curveDescription>Hook Load</curveDescription>
+      <typeLogData>double</typeLogData>
+    </logCurveInfo>
+
+    <!-- Telemetry Log Data Points -->
+    <logData>
+      <!-- Row 1: Valid baseline at 2835.0m -->
+      <data>2835.0, 26.5, 110, 22.5, 8.5, 9.85, 560, 3190, 1220</data>
+      <!-- Row 2: Valid at 2836.0m -->
+      <data>2836.0, 27.2, 108, 23.1, 8.2, 9.90, 558, 3210, 1225</data>
+      <!-- Row 3: Valid at 2837.0m -->
+      <data>2837.0, 28.0, 105, 24.2, 7.8, 9.95, 555, 3250, 1230</data>
+      <!-- Row 4: Valid at 2838.0m -->
+      <data>2838.0, 29.5, 102, 26.0, 7.2, 10.00, 550, 3310, 1240</data>
+      <!-- Row 5: Valid at 2839.0m -->
+      <data>2839.0, 31.0, 98, 28.5, 6.5, 10.05, 545, 3380, 1255</data>
+      <!-- Row 6: Valid at 2840.0m -->
+      <data>2840.0, 33.2, 95, 31.0, 5.8, 10.10, 540, 3450, 1270</data>
+      <!-- Row 7: Valid at 2841.0m -->
+      <data>2841.0, 35.0, 90, 34.2, 4.9, 10.15, 535, 3520, 1290</data>
+      <!-- Row 8: [CORRUPTED ROW] Severe Depth Regression (2812.0m after 2841.0m) & Negative WOB -->
+      <data>2812.0, -15.0, 120, 12.0, 18.0, 9.80, 580, 2900, 950</data>
+      <!-- Row 9: Valid resumption at 2842.0m -->
+      <data>2842.0, 37.5, 86, 38.0, 4.0, 10.20, 528, 3600, 1315</data>
+      <!-- Row 10: Valid at 2843.0m -->
+      <data>2843.0, 39.0, 82, 41.5, 3.2, 10.22, 520, 3680, 1340</data>
+      <!-- Row 11: Valid at 2844.0m -->
+      <data>2844.0, 41.2, 78, 45.0, 2.4, 10.25, 510, 3750, 1370</data>
+      <!-- Row 12: Valid at 2845.0m -->
+      <data>2845.0, 43.5, 75, 48.2, 1.8, 10.28, 500, 3840, 1400</data>
+    </logData>
+  </log>
+</logs>

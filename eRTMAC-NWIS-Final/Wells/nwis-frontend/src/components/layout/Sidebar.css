@@ -1,0 +1,202 @@
+/* Sidebar Styles */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: var(--sidebar-width, 248px);
+  background: var(--color-sidebar-bg);
+  border-right: 1px solid var(--color-sidebar-hover);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  transition: width var(--transition-base);
+  overflow: visible;
+}
+
+.sidebar-collapsed {
+  width: var(--sidebar-width);
+}
+
+/* Logo */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-sidebar-hover);
+  height: var(--topbar-height);
+  position: relative;
+  overflow: visible;
+}
+
+.sidebar-logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-md);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.sidebar-logo-text {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-logo-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.sidebar-logo-subtitle {
+  font-size: 0.65rem;
+  color: var(--color-sidebar-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+/* Floating Collapse/Expand Handle Button */
+.sidebar-toggle {
+  position: absolute;
+  right: -14px;
+  top: 24px;
+  width: 28px;
+  height: 28px;
+  background: #FFFFFF;
+  border: 1px solid #E5DCD0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #5a3d28;
+  transition: all var(--transition-fast);
+  z-index: 40;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.sidebar-toggle:hover {
+  background: #fdfcfa;
+  color: #8b6244;
+  border-color: #8b6244;
+  transform: scale(1.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Navigation */
+.sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar-nav-bottom {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-sidebar-hover);
+}
+
+.sidebar-nav-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--color-sidebar-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 10px 10px 4px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: var(--radius-md);
+  color: var(--color-sidebar-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
+}
+.sidebar-link:hover {
+  background: var(--color-sidebar-hover);
+  color: var(--color-sidebar-text);
+}
+
+.sidebar-link-active {
+  background: var(--color-sidebar-active);
+  color: var(--color-sidebar-text);
+}
+.sidebar-link-active .sidebar-link-icon {
+  color: var(--color-sidebar-text);
+}
+.sidebar-link-active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+}
+
+.sidebar-link-icon {
+  flex-shrink: 0;
+}
+
+.sidebar-badge {
+  margin-left: auto;
+}
+
+/* Status */
+.sidebar-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--color-sidebar-hover);
+  font-size: 0.72rem;
+  color: var(--color-sidebar-muted);
+}
+
+.sidebar-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-success);
+  animation: pulse-glow 2s infinite;
+}
+
+/* Collapsed overrides */
+.sidebar-collapsed .sidebar-logo {
+  justify-content: center;
+  padding: 14px 8px;
+}
+
+.sidebar-collapsed .sidebar-link {
+  justify-content: center;
+  padding: 10px 0;
+}
+.sidebar-collapsed .sidebar-nav-label {
+  display: none;
+}

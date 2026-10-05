@@ -1,0 +1,8 @@
+# Optional extras for the experimental ML package (install with: pip install -r ml/requirements-ml.txt)
+xgboost
+lightgbm
+shap
+lime
+matplotlib
+scipy
+joblib

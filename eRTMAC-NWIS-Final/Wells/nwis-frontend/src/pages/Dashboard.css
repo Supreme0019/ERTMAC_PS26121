@@ -1,0 +1,71 @@
+/* Dashboard Page Styles */
+
+.dash-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.dash-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-heading);
+}
+
+.dash-card-subtitle {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.dash-chart-container {
+  margin: 0 -8px;
+}
+
+/* Risk Legend */
+.dash-risk-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dash-risk-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dash-risk-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.dash-risk-legend-label {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  flex: 1;
+}
+
+.dash-risk-legend-value {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Incident Action Feed */
+.incident-feed-item {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.incident-feed-item:hover {
+  transform: translateX(3px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  border-color: rgba(99, 128, 185, 0.35) !important;
+}

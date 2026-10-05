@@ -1,0 +1,53 @@
+version: '3.8'
+
+# =============================================================================
+# NWIS Backend — Docker Compose (Local & Offline Ready)
+# =============================================================================
+# Runs a full local stack without internet connectivity.
+# Schema initialization is handled automatically on startup by src/db/schema.js.
+#
+# Usage:
+#   docker compose up -d          # Starts local postgres + backend
+# =============================================================================
+
+services:
+  # ── PostgreSQL with PostGIS ───────────────────────────────────────────────
+  postgres:
+    image: postgis/postgis:15-3.3
+    container_name: nwis-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-nwis_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-nwis_secret_2026}
+      POSTGRES_DB: ${POSTGRES_DB:-nwis_db}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-nwis_admin} -d ${POSTGRES_DB:-nwis_db}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ── Node.js Express Backend ───────────────────────────────────────────────
+  backend:
+    build: .
+    container_name: nwis-backend
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 4000
+      DATABASE_URL: postgresql://${POSTGRES_USER:-nwis_admin}:${POSTGRES_PASSWORD:-nwis_secret_2026}@postgres:5432/${POSTGRES_DB:-nwis_db}
+      JWT_SECRET: ${JWT_SECRET:-nwis_local_jwt_secret_key_32_characters_minimum}
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:5173,http://localhost:3000}
+    ports:
+      - "4000:4000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./uploads:/app/uploads
+
+volumes:
+  postgres_data:

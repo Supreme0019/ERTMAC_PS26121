@@ -1,0 +1,120 @@
+/* Operations Analytics - 25km Offset Well Comparison Styles */
+
+.analytics-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.proximity-banner {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(149, 86, 45, 0.08) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-left: 5px solid var(--color-warning);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.proximity-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.matrix-container {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+.matrix-table th,
+.matrix-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--color-border-light);
+  white-space: nowrap;
+}
+
+.matrix-table th {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-heading);
+  font-weight: 600;
+  text-align: left;
+}
+
+.matrix-table tr:hover td {
+  background-color: rgba(149, 86, 45, 0.04);
+}
+
+.matrix-ref-col {
+  background-color: rgba(149, 86, 45, 0.06) !important;
+  border-left: 2px solid var(--color-brown-primary);
+  border-right: 2px solid var(--color-brown-primary);
+}
+
+.issue-card {
+  padding: 18px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.issue-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  border-color: var(--color-brown-primary);
+}
+
+.issue-card.severity-critical {
+  border-left: 4px solid #ef4444;
+}
+
+.issue-card.severity-high {
+  border-left: 4px solid #f97316;
+}
+
+.issue-card.severity-medium {
+  border-left: 4px solid #f59e0b;
+}
+
+.issue-card.severity-low {
+  border-left: 4px solid #10b981;
+}
+
+.mitigation-box {
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

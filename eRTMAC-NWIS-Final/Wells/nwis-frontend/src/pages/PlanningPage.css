@@ -1,0 +1,342 @@
+/* =============================================================================
+   NWIS Frontend — Pre-Spud Well Planning & Hazard Assessment Styles
+   ============================================================================= */
+
+.planning-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding-bottom: 60px;
+}
+
+/* Header & Actions */
+.planning-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.planning-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text-heading);
+}
+
+.planning-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 0.88rem;
+  margin-top: 4px;
+  max-width: 850px;
+  line-height: 1.45;
+}
+
+/* Preset quick-jump buttons */
+.preset-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+}
+
+.preset-btn {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-primary);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.preset-btn:hover {
+  background-color: var(--color-brown-primary);
+  color: #fff;
+  border-color: var(--color-brown-primary);
+}
+
+/* Main Split Layout */
+.planning-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .planning-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Map Card */
+.planning-map-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.planning-map-header {
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--color-border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-bg-secondary);
+}
+
+.planning-map-view {
+  height: 480px;
+  width: 100%;
+  position: relative;
+}
+
+.map-control-overlay {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.75rem;
+}
+
+.map-coords-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 1000;
+  background: rgba(30, 41, 59, 0.92);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Input Form Card */
+.planning-form-card {
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group-custom {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group-custom label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* DGH Concession Badge Strip */
+.dgh-strip {
+  background: linear-gradient(135deg, rgba(149, 86, 45, 0.08) 0%, rgba(245, 158, 11, 0.08) 100%);
+  border: 1px solid rgba(149, 86, 45, 0.25);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.dgh-kpi-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.dgh-kpi-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.dgh-kpi-val {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-heading);
+  margin-top: 2px;
+}
+
+/* Stratigraphy Column Track */
+.stratigraphy-track {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-secondary);
+  padding: 8px;
+}
+
+.stratum-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 180px 100px;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--color-bg-card);
+  border-radius: 4px;
+  border-left: 5px solid #cbd5e1;
+  font-size: 0.82rem;
+  transition: all 0.15s ease;
+}
+
+.stratum-row:hover {
+  background: rgba(149, 86, 45, 0.04);
+  transform: translateX(2px);
+}
+
+.stratum-row.target-stratum {
+  border-left-color: var(--color-brown-primary);
+  background: rgba(149, 86, 45, 0.06);
+}
+
+/* Depth Hazard Cards */
+.hazard-interval-card {
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.15s ease;
+}
+
+.hazard-interval-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.hazard-interval-card.sev-critical {
+  border-left: 5px solid #ef4444;
+}
+
+.hazard-interval-card.sev-high {
+  border-left: 5px solid #f97316;
+}
+
+.hazard-interval-card.sev-medium {
+  border-left: 5px solid #f59e0b;
+}
+
+.hazard-interval-card.sev-low {
+  border-left: 5px solid #10b981;
+}
+
+.recorded-event-pill {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-light);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+/* Engineering Program Tables */
+.eng-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.eng-table th,
+.eng-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-border-light);
+  text-align: left;
+}
+
+.eng-table th {
+  background-color: var(--color-bg-secondary);
+  font-weight: 600;
+  color: var(--color-text-heading);
+}
+
+/* Modal Dossier */
+.dossier-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.dossier-modal {
+  background: #ffffff;
+  color: #1e293b;
+  width: 100%;
+  max-width: 880px;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dossier-modal-body {
+  padding: 30px 40px;
+  overflow-y: auto;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* Print Styles for DGH Dossier */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .dossier-modal, .dossier-modal * {
+    visibility: visible;
+  }
+  .dossier-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    border: none;
+  }
+  .dossier-modal-actions {
+    display: none !important;
+  }
+}

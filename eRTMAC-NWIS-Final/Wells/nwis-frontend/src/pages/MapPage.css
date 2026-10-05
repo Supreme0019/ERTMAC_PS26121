@@ -1,0 +1,121 @@
+.map-page {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+.map-controls {
+  width: 280px;
+  flex-shrink: 0;
+  padding: var(--space-lg);
+  border-right: 1px solid var(--color-border);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  background: var(--color-bg-secondary);
+}
+
+.map-controls-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-heading);
+}
+
+.map-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.map-style-btns {
+  display: flex;
+  gap: 4px;
+}
+
+.map-range {
+  flex: 1;
+  accent-color: var(--color-accent-cyan);
+  height: 4px;
+}
+
+.map-container {
+  flex: 1;
+  min-height: 100%;
+}
+
+/* Well List */
+.map-well-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.map-well-list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.map-well-list-item:hover,
+.map-well-list-item.active {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+}
+
+.map-well-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.map-well-dot-active    { background: #34d399; }
+.map-well-dot-drilling  { background: #38bdf8; }
+.map-well-dot-completed { background: #8b99b8; }
+.map-well-dot-suspended { background: #fbbf24; }
+.map-well-dot-abandoned { background: #f87171; }
+
+/* Legend */
+.map-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.map-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+/* Marker fix */
+.well-marker {
+  background: none !important;
+  border: none !important;
+}
+
+@media (max-width: 768px) {
+  .map-page {
+    flex-direction: column;
+  }
+  .map-controls {
+    width: 100%;
+    max-height: 200px;
+  }
+}
